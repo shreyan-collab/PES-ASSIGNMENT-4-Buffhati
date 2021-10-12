@@ -1,0 +1,2 @@
+statemachine.c:272:6:transition_state	32	static
+statemachine.c:97:6:statemachine	24	static
