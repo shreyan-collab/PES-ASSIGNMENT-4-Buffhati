@@ -1,3 +1,3 @@
 switch.c:37:6:init_switch	0	static
-switch.c:58:5:check_button_pressed	0	static
-switch.c:75:6:PORTD_IRQHandler	0	static
+switch.c:62:5:check_switch_pressed	0	static
+switch.c:79:6:PORTD_IRQHandler	0	static
