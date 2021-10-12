@@ -1,3 +1,0 @@
-statemachine.c:104:6:statemachine	24	static
-statemachine.c:279:6:set_led_colour	24	static
-statemachine.c:372:6:check_button_pressed	16	static
