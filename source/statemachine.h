@@ -21,20 +21,30 @@
 
 
 /*
- * @brief Executes the traffic light sequence with cross-walk functionality
- *
- * The traffic light sequence consists of 9 states including STOP, GO, WARNING states
- * with cross-walk state triggered through touch silder or gpio push button
- *
- * @return void
- */
-void transition_state(uint8_t currentState);
-
-/*
  * @brief The red, green and blue values to be loaded with TPM modules is calculated
  * 		  depending on the states
  *
- * @param previous State to calculate the value of colours required to tranition to the new state
+ * @param previous State to calculate the value of colours required to transition to the new state
+ * @return void
+ */
+
+void set_led_colour(uint8_t previousState);
+
+
+/*
+ * @brief Executes the traffic light sequence with cross-walk functionality
+ *
+ * The traffic light sequence consists of 9 states including STOP, GO, WARNING states
+ * with cross-walk state triggered through touch slider or gpio push button
+ *
  * @return void
  */
 void statemachine();
+
+/*
+ * @brief Check whether touch slider or switch is pressed to implement cross-walk functionality
+ *
+ *
+ * @return true if slider/switch is pressed else return false
+ */
+bool check_button_pressed();

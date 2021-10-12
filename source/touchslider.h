@@ -22,6 +22,7 @@
 #include "fsl_debug_console.h"
 
 
+#define SLIDER_PRESSED_MINIMUM_VALUE 100
 
 /**
  * @brief To return the value of the touch slider's input

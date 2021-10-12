@@ -12,7 +12,6 @@
  * 2) Embedded Systems fundamentals with ARM Cortex-M based microcontroller by Alexander Dean
  */
 
-
 #include <pwm.h>
 #include <stdio.h>
 #include "board.h"
@@ -32,7 +31,7 @@
  * @brief The main function initializes various modules and calls the state machine
  *
  * Initialization of various modules including timer, PWM, slider and switch
- * connected to gpio port is done
+ * connected to gpio port is carried out
  *
  *
  * @return void
@@ -99,10 +98,6 @@ int main(void)
      */
     statemachine();
 
-    	  //////////////////EXTRA CODE///////////////
-    	  // delay(10);
-    	  // while(get_timer()-currentTimer < 1 );
-    	  // transition7_state(currentState,nextState);
     return 0;
 }
 

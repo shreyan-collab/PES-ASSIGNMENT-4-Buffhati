@@ -17,15 +17,15 @@
 #include "timer.h"
 #include "MKL25Z4.h"
 
-bool flag=0;
-volatile uint16_t checkTimeout=0;
+bool checkCrosswalkflag=0; /*if it is set, check whether the user has pressed has the button*/
+volatile uint16_t checkTimeoutFlag=0;/*To check if 1ms is passed*/
 
-ticktime transitionCount=0;
-ticktime reset_time=0;
+ticktime ticksCount=0; /*Incremented every 62.5 ms in interrupt handler*/
+ticktime reset_time=0; /*Used the get the current time value from a previous Value by subtracting it */
 
 
 /*
- *@brief Initializing the capacitive touch slider present on the hardware board
+ *@brief Initializes the systick to generate a tick every 62.5 ms
  *
  *The clock is set as external clock and timer is incremented very 62.5ms and the NVIC
  *priority is set as 3
@@ -50,9 +50,9 @@ void Init_SysTick(void)
  */
 void SysTick_Handler()
 {
-   transitionCount++;
-   checkTimeout=1;
-   flag=1;
+   ticksCount++;
+   checkTimeoutFlag=1;
+   checkCrosswalkflag=1;
 
 }
 
@@ -60,12 +60,23 @@ void SysTick_Handler()
  *@brief Time in msec since startup
  *
  *
- *@return time since startup in ticks to the calling function where every tick is 62.5 ms
+ *@return time since program startup in msec to the calling function
  */
+ticktime current_time()
+{
+	return (ticksCount*62.5);
+}
 
+
+/*
+ *@brief Calculate the number of ticks since startup, used in functions reset_timer()
+ *and get_timer() to calculate number of ticks at various intervals
+ *
+ *@return ticks since program startup to the calling function where every tick is 62.5 ms
+ */
 ticktime now()
 {
-	return transitionCount;
+	return ticksCount;
 }
 
 /*

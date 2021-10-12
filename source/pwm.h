@@ -51,7 +51,7 @@ void Init_Green_LED_PWM(uint16_t period);
  * @param3: Blue value to be loaded with TPM 0 Channel 1 ranging from 0-255
  * @return:void
  */
-void start_transition(uint16_t redValue,uint16_t greenValue,uint16_t blueValue);
+void update_led_colour(uint16_t redValue,uint16_t greenValue,uint16_t blueValue);
 
 
 #endif /* TIMERS_H_ */

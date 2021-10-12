@@ -21,7 +21,7 @@
  * @brief Initialize the on-board switch to trigger cross-walk state of KL25Z freedom development board
  *
  * The GPIO Port D 3rd pin is configured as input with pull-up functionality to trigger
- * cross-walk when button is presses
+ * cross-walk when button is pressed
  *
  * @return void
  */
@@ -35,5 +35,5 @@ void init_switch();
  *
  * @return button_pressed - Sends 0 if button not pressed and 1 if button is pressed
  */
-int check_button_pressed();
+int check_switch_pressed();
 
