@@ -2,6 +2,7 @@
 
 
 Reviewer Partner's name : Balapranesh Elango
+Date and Time : 11th October, 11.30 PM
 
 1) For better readbility, wherever meaningful I have added the appropriate headers
 2) Instead of multiplying 0xFF in pwm.c function, I have used efficient left shifting operations which will reduce the number of cycles for same operation
